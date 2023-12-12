@@ -2,6 +2,7 @@ package baseball.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Computer {
@@ -10,7 +11,7 @@ public class Computer {
         setNewNumbers();
     }
 
-    public void setNewNumbers() {
+    private void setNewNumbers() {
         numbers = new ArrayList<>();
 
         while (numbers.size() < 3) {
@@ -19,5 +20,9 @@ public class Computer {
                 numbers.add(randomNumber);
             }
         }
+    }
+
+    public List<Integer> getNumbers() {
+        return Collections.unmodifiableList(numbers);
     }
 }
